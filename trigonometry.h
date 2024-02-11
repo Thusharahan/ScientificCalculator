@@ -210,7 +210,3 @@ double myarctan(double value)
       return angle;
    }
 }
-
-int main(){
-    printf("%lf",mysin(160.00));
-}
