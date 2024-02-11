@@ -1,7 +1,5 @@
 #include"quadratic.h"
 
-double cubic(void);
-
 double cubic(void)
 {
     double a, b, c, d, delta, x2, x3, q_a, q_b, q_c, factor, i, f_x;

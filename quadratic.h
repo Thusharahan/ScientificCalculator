@@ -1,6 +1,6 @@
-#include<stdio.h>
-#include"square_root.h"
-#include"find_power.h"
+#include <stdio.h>
+#include "square_root.h"
+#include "find_power.h"
 
 double quadratic(void);
 double quadratic_finder_solution_1(double input_1, double input_2, double input_3);
