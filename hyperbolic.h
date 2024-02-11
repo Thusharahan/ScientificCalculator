@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 #include "exp.h"
 #include "arithmatic.h"
 #include "ln.h"

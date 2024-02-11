@@ -1,14 +1,5 @@
-#include<stdio.h>
-#include"arithmatic.h"
-
-
-double quadratic(void);
-double quadratic_finder_solution_1(double input_1, double input_2, double input_3);
-double quadratic_finder_solution_2(double input_1, double input_2, double input_3);
-
-double find_quadratic_equation_1(double a);
-double find_quadratic_equation_2(double factor, double a, double b);
-double find_quadratic_equation_3(double factor,double a, double b, double c);
+#include <stdio.h>
+#include "arithmatic.h"
 
 double quadratic(void)
 {

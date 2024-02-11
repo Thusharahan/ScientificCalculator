@@ -1,4 +1,4 @@
-#include"quadratic.h"
+#include "quadratic.h"
 
 double cubic(void)
 {

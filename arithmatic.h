@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 
 // Arithmetic functions
 // double add(double a, double b) {
