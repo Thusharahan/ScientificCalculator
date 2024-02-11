@@ -6,7 +6,10 @@
 #include "ln.h"
 #include "Log.h"
 #include "exp.h"
-
+#include "cubic.h"
+#include "hyperbolic.h"
+#include "square_root.h"
+#include "quadratic.h"
 
 
 //Define varibles to use the address of them.
@@ -258,7 +261,7 @@ void Polynomial(){
     double *num = &f;
     char term;
     printf("Enter the type of Hyperbolic operation you want to perform:");    //Prompt user for choise input
-    printf("\n1. ax2 + bx + c = 0\n2. ax3 + bx2 + cx + d = 0\nChoise: ");
+    printf("\n1. ax+b= 0 \n2. ax2 + bx + c = 0\n2. ax3 + bx2 + cx + d = 0\nChoise: ");
     while(1){
         if(scanf("%d%c",choise,&term) != 2 || term != '\n' || (*choise > 3 && *choise < 0)){      //Checks whether there is an enter key pressed after entering a number or not.
             printf("Entered choise is not valid !!!!\nPlease enter a valid choise: ");
