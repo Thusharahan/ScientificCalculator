@@ -23,7 +23,7 @@ double divide(double a, double b) {
 }
 
 double power(double base, double exponent) {
-      double result = 1.0;
+    double result = 1.0;
 
     if (exponent >= 0) {
         for (int i = 0; i < exponent; ++i) {

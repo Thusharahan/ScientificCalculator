@@ -1,19 +1,15 @@
-double calculateExponential(double *x) {
+double exponential(double num) {
     double result = 1.0;
-    int i;
-
-    printf("Enter a number: ");
-    scanf("%lf", x);
 
     // For positive exponent
-    if (*x > 0) {
-        for (i = 0; i < *x; i++) {
+    if (num > 0) {
+        for (int i = 0; i < num; i++) {
             result *= 2.71828; // Approximation of Euler's number (e)
         }
     }
     // For negative exponent
-    else if (*x < 0) {
-        for (i = 0; i > *x; i--) {
+    else if (num < 0) {
+        for (int i = 0; i > num; i--) {
             result /= 2.71828; // Approximation of Euler's number (e)
         }
     }
