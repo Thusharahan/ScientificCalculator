@@ -53,6 +53,7 @@ double mysin(double angle)
             }else {
                 return -sine;
             }
+            
        }
    }
    // If the angle is greater than 180 degrees, wrap it around to the range 0 to 180
