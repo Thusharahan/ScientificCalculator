@@ -40,10 +40,11 @@ double mysin(double angle)
    if (angle < -180){
        sine = mysin(-angle);
        int intangle = (int)angle;
+       printf("%d\n\n",intangle);
        intangle = intangle % 180;
        angle = (double)intangle;
        // If the angle is a multiple of 180, return 0
-       if ((intangle / 180)/2 == 1){
+       if ((intangle / 180)%2 == 1){
             return sine;
 
        } else{
@@ -65,7 +66,7 @@ double mysin(double angle)
        {
            angle = angle * (22.0/7.0) / 180.0;
            // Calculate the sine using the power and factorial functions
-           for (int i = 0; i < 10; i++)
+           for (int i = 0; i < 5; i++)
            {
                sine += sign * (power(angle, 2 * i + 1) / factorialdouble(2 * i + 1));
                sign *= -1;
@@ -80,7 +81,7 @@ double mysin(double angle)
    }
    // Calculate the sine using the power and factorial functions
    angle = angle * (22.0/7.0) / 180.0;
-   for (int i = 0; i < 17; i++)
+   for (int i = 0; i < 5; i++)
    {
        sine += sign * (power(angle, 2 * i + 1) / factorialdouble(2 * i + 1));
        sign *= -1;
@@ -212,5 +213,10 @@ double myarctan(double value)
 }
 
 int main(){
-    printf("%lf",mysin(160.00));
+    double user;
+    scanf("%lf",&user);
+    printf("%lf",mysin(user));
+    if(-1200 < -180){
+        printf("True");
+    }
 }
