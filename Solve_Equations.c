@@ -1,6 +1,6 @@
-#include<stdio.h>
-#include"linear.h"
-#include"cubic.h"
+#include <stdio.h>
+#include "linear.h"
+#include "cubic.h"
 
 int main()
 {

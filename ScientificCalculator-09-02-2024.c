@@ -195,7 +195,8 @@ void Arithmetic(){
             break;
             
         case 5: 
-            *(num+1) = exp(*num);                                   //Exponentiation
+            *(num+1) = exponential
+            (*num);                                   //Exponentiation
             printf("exp(%.2lf) = %.2lf",*num,*(num+1));
             break;
             
@@ -243,15 +244,15 @@ void LogandExponential(){
     }
     switch (*choise) {
         case 1:
-            printf("ln(%.2lf) = %.4lf",*num,ln(*num));              //Natural logarithm
+            printf("ln(%.2lf) = %.4lf",*num,logln(*num));              //Natural logarithm
             break;
 
         case 2:  
-            printf("log10(%.2lf) = %.4lf",*num,log(*num,10));          //Base-10 logarithm
+            printf("log10(%.2lf) = %.4lf",*num,mylog(*num,10));          //Base-10 logarithm
             break;
 
         case 3:  
-            printf("exp(%.2lf) = %.4lf",*num,exp(*num));                 //Exponential function
+            printf("exp(%.2lf) = %.4lf",*num,exponential(*num));                 //Exponential function
             break;
     }
 }
