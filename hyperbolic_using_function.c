@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "square_root.h"  
 #include "ln.h"
 //#include "exponential.h"
 #include "exp.h"

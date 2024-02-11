@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include"square_root.h"
 #include"arithmatic.h"
 
 

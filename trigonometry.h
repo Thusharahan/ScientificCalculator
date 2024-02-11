@@ -47,7 +47,7 @@ double mycos(double angle)
    double cosine = 0;
    int sign = 1;
    // Calculate the cosine using the sine function
-   cosine = sqrt(1 - power(mysin(angle), 2));
+   cosine = squareRoot(1 - power(mysin(angle), 2));
    // Return the cosine
    return cosine;
 }
@@ -76,7 +76,7 @@ double myarcsin(double angle)
 
 double myarccos(double value)
 {
-    double sineval = sqrt(1 - value*value);
+    double sineval = squareRoot(1 - value*value);
     double angle = myarcsin(sineval);
     return angle;
 }
@@ -84,7 +84,7 @@ double myarccos(double value)
 // Function to calculate the arctangent of a value
 double myarctan(double value)
 {
-   double sineval = value / sqrt(1 + value*value);
+   double sineval = value / squareRoot(1 + value*value);
    if (sineval == 1)
       return 45;
    else if (sineval == -1)

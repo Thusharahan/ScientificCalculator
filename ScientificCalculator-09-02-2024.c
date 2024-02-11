@@ -8,8 +8,8 @@
 #include "exp.h"
 #include "cubic.h"
 #include "hyperbolic.h"
-#include "square_root.h"
 #include "quadratic.h"
+#include "linear.h"
 
 
 //Define varibles to use the address of them.
@@ -105,27 +105,27 @@ void Hyperbolic(){
     }
     switch (*choise) {
         case 1:
-            printf("Sinh(%.2lf) = %.4lf",*num,sinh(*num));          //Find sinh with math library function
+            printf("Sinh(%.2lf) = %.4lf",*num,getsinh(*num));          //Find sinh with math library function
             break;
 
         case 2:  
-            printf("Cosh(%.2lf) = %.4lf",*num,cosh(*num));             //Find cosh with math library function
+            printf("Cosh(%.2lf) = %.4lf",*num,getcosh(*num));             //Find cosh with math library function
             break;
 
         case 3:  
-            printf("Tanh(%.2lf) = %.4lf",*num,mytanh(*num));             //Call mytanh function
+            printf("Tanh(%.2lf) = %.4lf",*num,gettanh(*num));             //Call mytanh function
             break;
             
         case 4:    
-            printf("Arcsinh(%.2lf) = %.4lf",*num,asinh(*num));             //Find asinh with math library function
+            printf("Arcsinh(%.2lf) = %.4lf",*num,getasinh(*num));             //Find asinh with math library function
             break;
             
         case 5: 
-            printf("Arccosh(%.2lf) = %.4lf",*num,acosh(*num));             //Find acos with math library function
+            printf("Arccosh(%.2lf) = %.4lf",*num,getacosh(*num));             //Find acos with math library function
             break;
             
         case 6: 
-            printf("Arctanh(%.2lf) = %.4lf",*num,atanh(*num));             //Find atanh with math library function
+            printf("Arctanh(%.2lf) = %.4lf",*num,gettanh(*num));             //Find atanh with math library function
             break;
         }
     
@@ -200,16 +200,16 @@ void Arithmetic(){
             break;
             
         case 6: 
-            *(num+2) = pow(*num, *(num+1));                        //Power
+            *(num+2) = power(*num, *(num+1));                        //Power
             printf("%.2lf ^ %.2lf = %.2lf",*num,*(num+1),*(num+2));
             break;
         
         case 7:
-            *(num+1) = sqrt(*num);                                  //Square root
+            *(num+1) = squareRoot(*num);                                  //Square root
             printf("sqrt(%.2lf) = %.2lf",*num,*(num+1));
             break;
         case 8: 
-            *(num+1) = cbrt(*num);                                    //Cube root
+            *(num+1) = cubeRoot(*num);                                    //Cube root
             printf("cbrt(%.2lf) = %.2lf",*num,*(num+1));
             break;
 
@@ -243,11 +243,11 @@ void LogandExponential(){
     }
     switch (*choise) {
         case 1:
-            printf("ln(%.2lf) = %.4lf",*num,log(*num));              //Natural logarithm
+            printf("ln(%.2lf) = %.4lf",*num,ln(*num));              //Natural logarithm
             break;
 
         case 2:  
-            printf("log10(%.2lf) = %.4lf",*num,mylog10(*num));          //Base-10 logarithm
+            printf("log10(%.2lf) = %.4lf",*num,log(*num,10));          //Base-10 logarithm
             break;
 
         case 3:  
@@ -261,59 +261,19 @@ void Polynomial(){
     double *num = &f;
     char term;
     printf("Enter the type of Hyperbolic operation you want to perform:");    //Prompt user for choise input
-    printf("\n1. ax+b= 0 \n2. ax2 + bx + c = 0\n2. ax3 + bx2 + cx + d = 0\nChoise: ");
-    while(1){
-        if(scanf("%d%c",choise,&term) != 2 || term != '\n' || (*choise > 3 && *choise < 0)){      //Checks whether there is an enter key pressed after entering a number or not.
-            printf("Entered choise is not valid !!!!\nPlease enter a valid choise: ");
-            while(getchar() != '\n');
-            continue;
-        }
-        else {
-            printf("Enter the number a: ");            //Prompt user for input of second number
-        }
-        if(scanf("%lf%c",num,&term) != 2 || term != '\n'){      //Checks whether there is an enter key pressed after entering a number or not.
-            printf("Entered number is not valid !!!!\nPlease enter a valid number: ");
-            while(getchar() != '\n');
-            continue;
-        }
-        else{
-            printf("Enter the number b: ");
-        }
-        if(scanf("%lf%c",num+1,&term) != 2 || term != '\n'){      //Checks whether there is an enter key pressed after entering a number or not.
-            printf("Entered number is not valid !!!!\nPlease enter a valid number: ");
-            while(getchar() != '\n');
-            continue;
-        }
-        else{
-            printf("Enter the number c: ");
-        }
-        if(scanf("%lf%c",num+2,&term) != 2 || term != '\n'){      //Checks whether there is an enter key pressed after entering a number or not.
-            printf("Entered number is not valid !!!!\nPlease enter a valid number: ");
-            while(getchar() != '\n');
-            continue;
-        }
-        else if (*choise == 2){
-            printf("Enter the number d: ");
-        }else{
-            break;
-        }
-        if(scanf("%lf%c",num+3,&term) != 2 || term != '\n'){      //Checks whether there is an enter key pressed after entering a number or not.
-            printf("Entered number is not valid !!!!\nPlease enter a valid number: ");
-            while(getchar() != '\n');
-            continue;
-        }
-        else{
-            break;
-        }
-
-    }
+    printf("\n1. ax+b= 0 \n2. ax2 + bx + c = 0\n3. ax3 + bx2 + cx + d = 0\nChoise: ");
+    
     switch (*choise) {
         case 1:
-            rootsofquardratic(*num ,*(num+1),*(num+2));  //Call the function to find roots of quadratic equation
+           linear(); //Call the function to find roots of quadratic equation
             break;
 
         case 2:  
-            rootsofcubic(*num,*(num+1),*(num+2),*(num+3));  //Call the function to find roots of cubic equation
+            quadratic();  //Call the function to find roots of cubic equation
+            break;
+        
+         case 3:  
+           cubic(); //Call the function to find roots of cubic equation
             break;
     }
 }
@@ -322,7 +282,7 @@ void Others(){
     int *ptr = &n;
     char term;
     printf("Enter the type of operation you want to perform:");  //Prompt user for choise input
-    printf("\n1. Absolute value\n2. Factorial\n3. Modulos\nChoise: ");
+    printf("\n1. Absolute value\n2. Factorial\n3. Modulos\n4. nCr\n5. nPr\nChoise: ");
     while(1){
         if(scanf("%d%c",ptr,&term) != 2 || term != '\n' || (*ptr > 3 && *ptr < 0)){      //Checks whether there is an enter key pressed after entering a number or not.
             printf("Entered choise is not valid !!!!\nPlease enter a valid choise: ");
@@ -361,7 +321,7 @@ void Others(){
     }
     switch (*ptr) {
         case 1:
-            printf("abs(%d) = %d",*(ptr+1),abs(*(ptr+1)));     //Calling abs function 
+            printf("abs(%d) = %d",*(ptr+1),absolute(*(ptr+1)));     //Calling abs function 
             break;
 
         case 2:  
@@ -372,6 +332,15 @@ void Others(){
             *(ptr+3) = *(ptr+1) % *(ptr+2); 
             printf("Modulos(%d,%d) = %d",*(ptr+1),*(ptr+2),*(ptr+3));         //Calculating modulus
             break;
+
+        case 4:
+            printf("result = %.4lf",nCr(*ptr+1,*ptr+2));          //combimation
+            break;
+
+        case 5:
+            printf("result = %.4lf",nPr(*ptr+1,*ptr+2));          //permutation
+            break;
+
     }
 }
 
